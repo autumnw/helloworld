@@ -9,5 +9,6 @@ jobs:
 - name: test-app
   plan:
   - get: helloworld
+    trigger: true
   - task: tests
     file: helloworld/ci/build.yml
