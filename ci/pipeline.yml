@@ -1,0 +1,13 @@
+resources:
+- name: helloworld
+  type: git
+  source:
+    uri: https://github.com/autumnw/helloworld
+    branch: master
+
+jobs:
+- name: test-app
+  plan:
+  - get: helloworld
+  - task: tests
+    file: helloworld/ci/build.yml
